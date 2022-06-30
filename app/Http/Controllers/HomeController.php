@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $calls = Call::all();
+        $calls = Call::orderBy('updated_at', 'desc')->get();
 
         return view('home', ['calls' => $calls]);
     }

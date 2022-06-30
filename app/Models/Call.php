@@ -10,5 +10,5 @@ class Call extends Model
     use HasFactory;
     protected $table = 'calls';
     protected $fillable = ['title', 'request', 'solicitor', 'sector', 'priority', 'status'];
-    
+    protected $date = ['updated_at'];
 }
