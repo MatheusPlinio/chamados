@@ -25,4 +25,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
     Route::post('/store/ticket', [TicketController::class, 'store'])->name('ticket.store');
+    Route::post('/destroy/ticket/{id}', [TicketController::class, 'destroy'])->name('ticket.destroy');
 });
