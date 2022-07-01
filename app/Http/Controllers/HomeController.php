@@ -10,8 +10,8 @@ class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
-      *
-      */
+     *
+     */
     // public function __construct()
     // {
     //     $this->middleware('auth');
@@ -24,8 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $calls = Call::orderBy('updated_at', 'desc')->get();
+        $chamados = Call::orderBy('updated_at', 'desc')->get();
 
-        return view('home', ['calls' => $calls]);
+        return view(
+            'home',
+            [
+                'chamados' => $chamados,
+            ]
+        );
     }
 }

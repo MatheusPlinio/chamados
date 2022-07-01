@@ -9,7 +9,7 @@
             <legend>
                 Título
                 <div class="input-group-prepend">
-                    <input type="text" name="title" placeholder="Qual seu chamado?" id="title" class="form-control">
+                    <input type="text" name="titulo" placeholder="Qual seu chamado?" id="title" class="form-control">
                     {{ $errors->has('title') ? $errors->first('title') : '' }}
                 </div>
             </legend>
@@ -17,7 +17,7 @@
             <legend>
                 Solicitação
                 <div class="input-group-prepend">
-                    <textarea name="request" placeholder="Qual a Solicitação?" class="form-control"></textarea>
+                    <textarea name="solicitacao" placeholder="Qual a Solicitação?" class="form-control"></textarea>
                     {{ $errors->has('request') ? $errors->first('request') : '' }}
                 </div>
             </legend>
@@ -40,7 +40,7 @@
 
             <legend>
                 <div class="input-group-prepend">
-                    <select name="priority" class="form-control">
+                    <select name="prioridade" class="form-control">
                         <option>-- Selecione uma prioridade--</option>
 
                         <option value="1">Baixa</option>
@@ -57,12 +57,12 @@
                 <legend>
                     Solicitante
                     <div class="input-group-prepend mb-1">
-                        <input type="text" name="solicitor" placeholder="Quem Solicitou?" class="form-control">
+                        <input type="text" name="solicitante" placeholder="Quem Solicitou?" class="form-control">
                         {{ $errors->has('solicitor') ? $errors->first('solicitor') : '' }}
                     </div>
 
                     <div class="input-group-prepend mt-1">
-                        <input type="text" name="sector" placeholder="Qual o Setor?" class="form-control">
+                        <input type="text" name="setor" placeholder="Qual o Setor?" class="form-control">
                         {{ $errors->has('sector') ? $errors->first('sector') : '' }}
                     </div>
                 </legend>

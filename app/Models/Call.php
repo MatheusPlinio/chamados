@@ -9,6 +9,6 @@ class Call extends Model
 {
     use HasFactory;
     protected $table = 'calls';
-    protected $fillable = ['title', 'request', 'solicitor', 'sector', 'priority', 'status'];
+    protected $fillable = ['titulo', 'solicitacao', 'solicitante', 'setor', 'prioridade', 'status'];
     protected $date = ['updated_at'];
 }

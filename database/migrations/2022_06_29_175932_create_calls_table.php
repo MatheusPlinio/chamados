@@ -15,13 +15,13 @@ class CreateCallsTable extends Migration
     {
         Schema::create('calls', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('request');
-            $table->string('solicitor');
-            $table->string('sector');
-            $table->integer('priority');
-            $table->integer('status');
+            $table->string('titulo');
+            $table->string('solicitacao');
             $table->timestamps();
+            $table->integer('status');
+            $table->integer('prioridade');
+            $table->string('solicitante');
+            $table->string('setor');
         });
     }
 

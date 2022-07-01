@@ -20,29 +20,30 @@ class TicketController extends Controller
     {
             $rules =
                 [
-                    'title' => 'required|min:4|max:25',
-                    'request' => 'required|min:4|max:50',
-                    'solicitor' => 'required|min:4|max:50',
-                    'sector' => 'required|min:4|max:50',
-                    'priority' => 'required',
+                    'titulo' => 'required|min:1|max:25',
+                    'solicitacao' => 'required|min:1|max:150',
+                    'prioridade' => 'required',
+                    'solicitante' => 'required|min:3|max:50',
+                    'setor' => 'required|min:1|max:50',
                 ];
             $feedback =
                 [
-                    'title' => 'O campo :attribute deve ser preenchido',
-                    'request' => 'O campo :attribute deve ser preenchido',
-                    'solicitor' => 'O campo :attribute deve ser preenchido',
-                    'sector' => 'O campo deve ser preenchido',
-                    'priority' => 'O campo deve ser preenchido'
+                    'titulo' => 'O campo :attribute deve ser preenchido',
+                    'solicitacao' => 'O campo :attribute deve ser preenchido',
+                    'prioridade' => 'O campo :attribute deve ser preenchido',
+                    'solicitante' => 'O campo :attribute deve ser preenchido',
+                    'setor' => 'O campo :attribute deve ser preenchido',
+                    
                 ];
 
             $request->validate($rules, $feedback);
 
             $call = new Call();
-            $call->title = $request->input('title');
-            $call->request = $request->input('request');
-            $call->solicitor = $request->input('solicitor');
-            $call->sector = $request->input('sector');
-            $call->priority = $request->input('priority');
+            $call->titulo = $request->input('titulo');
+            $call->solicitacao = $request->input('solicitacao');
+            $call->solicitante = $request->input('solicitante');
+            $call->setor = $request->input('setor');
+            $call->prioridade = $request->input('prioridade');
             $call->status = $request->input('status') === 1;
             $call->save();
             // dd($call);
