@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $chamados = Call::orderBy('updated_at', 'desc')->get();
-
+        $chamados = Call::orderBy('created_at', 'desc')->paginate(5);
+        
         return view(
             'home',
             [

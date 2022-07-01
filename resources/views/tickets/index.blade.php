@@ -10,7 +10,7 @@
                 Título
                 <div class="input-group-prepend">
                     <input type="text" name="titulo" placeholder="Qual seu chamado?" id="title" class="form-control">
-                    {{ $errors->has('title') ? $errors->first('title') : '' }}
+                    {{ $errors->has('titulo') ? $errors->first('titulo') : '' }}
                 </div>
             </legend>
 
@@ -18,14 +18,14 @@
                 Solicitação
                 <div class="input-group-prepend">
                     <textarea name="solicitacao" placeholder="Qual a Solicitação?" class="form-control"></textarea>
-                    {{ $errors->has('request') ? $errors->first('request') : '' }}
+                    {{ $errors->has('solicitacao') ? $errors->first('solicitacao') : '' }}
                 </div>
             </legend>
 
             <legend>
                 Data
                 <div class="input-group-prepend">
-                    <input type="datetime" name="updated_at" disabled="disabled" class="form-control" value="<?php echo date('Y-m-d | h:i:s a'); ?>">
+                    <input type="datetime" name="created_at" disabled="disabled" class="form-control" value="<?php echo date('d-m-Y | H:i'); ?>">
                 </div>
             </legend>
 
@@ -39,6 +39,7 @@
             </legend>
 
             <legend>
+                Prioridade
                 <div class="input-group-prepend">
                     <select name="prioridade" class="form-control">
                         <option>-- Selecione uma prioridade--</option>
@@ -49,7 +50,7 @@
 
                         <option value="3">Alta</option>
                     </select>
-                    {{ $errors->has('priority') ? $errors->first('priority') : '' }}
+                    {{ $errors->has('prioridade') ? $errors->first('prioridade') : '' }}
                 </div>
             </legend>
 
@@ -58,12 +59,12 @@
                     Solicitante
                     <div class="input-group-prepend mb-1">
                         <input type="text" name="solicitante" placeholder="Quem Solicitou?" class="form-control">
-                        {{ $errors->has('solicitor') ? $errors->first('solicitor') : '' }}
+                        {{ $errors->has('solicitante') ? $errors->first('solicitante') : '' }}
                     </div>
 
                     <div class="input-group-prepend mt-1">
                         <input type="text" name="setor" placeholder="Qual o Setor?" class="form-control">
-                        {{ $errors->has('sector') ? $errors->first('sector') : '' }}
+                        {{ $errors->has('setor') ? $errors->first('setor') : '' }}
                     </div>
                 </legend>
             </fieldset>

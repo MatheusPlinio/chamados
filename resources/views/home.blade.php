@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-<a href="{{ route ('ticket.index') }}" class="btn btn-primary mb-2">Novo Chamado <i class="fa-solid fa-circle-plus"></i></a>
+<a href="{{ route ('ticket.index') }}" class="btn btn-primary mb-2" id="novoChamado"><i class="fa-solid fa-circle-plus"></i> Novo Chamado</a>
     <table class="table table-bordered">
-        <thead>
+        <thead >
             <tr class="table-secondary">
                 <th class="text-center fs-6">Título</th>
                 <th class="text-center fs-6">Solicitação</th>
-                <th class="text-center fs-6">Data & Hora</th>
+                <th class="text-center fs-6">Data da Solicitação</th>
                 <th class="text-center fs-6">Status</th>
                 <th class="text-center fs-6">Prioridade</th>
                 <th class="text-center fs-6">Nome do Solicitante</th>
@@ -21,7 +21,7 @@
             <tr class="table-light">
                 <td class="text-center fs-6">{{ $chamado->titulo }}</td>
                 <td class="text-center fs-6">{{ $chamado->solicitante }}</td>
-                <td class="text-center fs-6">{{ $chamado->updated_at->format('d/m/Y | h:i:s a' )}}</td>
+                <td class="text-center fs-6">{{ $chamado->created_at->format('d/m/Y | H:i' )}}</td>
                 <td class="text-center fs-6">
                     @if($chamado->status === 0) Pendente
                     @endif
@@ -47,5 +47,8 @@
             @endforeach
         </tbody>
     </table>
+    <div class="pagination">
+        {!! $chamados->links() !!}
+    </div>
 </div>
 @endsection

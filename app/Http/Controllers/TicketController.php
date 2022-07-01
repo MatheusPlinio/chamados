@@ -29,7 +29,7 @@ class TicketController extends Controller
             $feedback =
                 [
                     'titulo' => 'O campo :attribute deve ser preenchido',
-                    'solicitacao' => 'O campo :attribute deve ser preenchido',
+                    'solicitação' => 'O campo :attribute deve ser preenchido',
                     'prioridade' => 'O campo :attribute deve ser preenchido',
                     'solicitante' => 'O campo :attribute deve ser preenchido',
                     'setor' => 'O campo :attribute deve ser preenchido',
