@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<a href="{{ route ('ticket.index') }}" class="btn btn-primary mb-2" id="novoChamado"><i class="fa-solid fa-circle-plus"></i> Novo Chamado</a>
+<a href="{{ route ('tickets.index') }}" class="btn btn-primary mb-2" id="novoChamado"><i class="fa-solid fa-circle-plus"></i> Novo Chamado</a>
     <table class="table table-bordered">
         <thead >
             <tr class="table-secondary">
@@ -22,19 +22,8 @@
                 <td class="text-center fs-6">{{ $chamado->titulo }}</td>
                 <td class="text-center fs-6">{{ $chamado->solicitante }}</td>
                 <td class="text-center fs-6">{{ $chamado->created_at->format('d/m/Y | H:i' )}}</td>
-                <td class="text-center fs-6">
-                    @if($chamado->status === 0) Pendente
-                    @endif
-                </td>
-                <td class="text-center fs-6">
-                    @if($chamado->prioridade === 1 ) Baixo
-                    
-                    @elseif($chamado->prioridade === 2 ) Média
-
-                    @elseif($chamado->prioridade === 3) Alto
-                    @endif
-                </td>
-                
+                <td class="text-center fs-6">{{ $chamado->status }}</td>
+                <td class="text-center fs-6">{{ $chamado->prioridade }}</td>
                 <td class="text-center fs-6">{{ $chamado->solicitante }}</td>
                 <td class="text-center fs-6">{{ $chamado->setor }}</td>
                 <td class="text-center fs-6">

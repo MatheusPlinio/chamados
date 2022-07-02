@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,8 +23,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/ticket', [TicketController::class, 'index'])->name('ticket.index');
-    Route::post('/store/ticket', [TicketController::class, 'store'])->name('ticket.store');
-    Route::post('/destroy/ticket/{id}', [TicketController::class, 'destroy'])->name('ticket.destroy');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/tickets', [TicketController::class, 'index'])->name('tickets.index');
+    Route::post('/store/tickets', [TicketController::class, 'store'])->name('tickets.store');
+    Route::post('/delete/tickets/{id}', [TicketController::class, 'delete'])->name('tickets.destroy');
 });
