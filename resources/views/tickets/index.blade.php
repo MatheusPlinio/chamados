@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="container">
-<a href="{{ route ('tickets.index') }}" class="btn btn-primary mb-2" id="novoChamado"><i class="fa-solid fa-circle-plus"></i> Novo Chamado</a>
+    <a href="{{ route ('tickets.create') }}" class="btn btn-primary mb-2" id="novoChamado">
+        <i class="fa-solid fa-circle-plus"></i>Novo Chamado</a>
     <table class="table table-bordered">
-        <thead >
+        <thead>
             <tr class="table-secondary">
                 <th class="text-center fs-6">Título</th>
                 <th class="text-center fs-6">Solicitação</th>
@@ -27,9 +28,11 @@
                 <td class="text-center fs-6">{{ $chamado->solicitante }}</td>
                 <td class="text-center fs-6">{{ $chamado->setor }}</td>
                 <td class="text-center fs-6">
-                    <form id="form_{{$chamado->id}}" action="{{ route('ticket.destroy', $chamado->id) }}" method="post">
+                    <form id="form_{{$chamado->id}}" action="{{ route('tickets.delete', $chamado->id) }}" method="post">
                         @csrf
-                        <a href="#" onclick="document.getElementById('form_{{$chamado->id}}').submit()" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                        <a href="#" onclick="document.getElementById('form_{{$chamado->id}}').submit()" class="btn btn-danger">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
                     </form>
                 </td>
             </tr>

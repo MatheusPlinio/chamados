@@ -11,6 +11,6 @@ class HomeController extends Controller
     {
         $chamados = Chamado::orderBy('created_at', 'desc')->paginate(10);
         
-        return view('home', ['chamados' => $chamados]);
+        return view('tickets.index', ['chamados' => $chamados]);
     }
 }

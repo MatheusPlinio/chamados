@@ -22,13 +22,13 @@ class TicketController extends Controller
             $chamado->fill($validated);
             $chamado->save();
 
-            return redirect()->route('home');
+            return redirect()->route('tickets.index');
     }
 
-    public function destroy($id) {
+    public function delete($id) {
         $call = Chamado::find($id);
         $call->delete();
 
-        return redirect()->route('home');
+        return redirect()->route('tickets.index');
     }
 }

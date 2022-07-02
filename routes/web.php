@@ -23,8 +23,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/tickets', [TicketController::class, 'index'])->name('tickets.index');
+    Route::get('/tickets/index', [HomeController::class, 'index'])->name('tickets.index');
+    Route::get('/tickets/create', [TicketController::class, 'index'])->name('tickets.create');
     Route::post('/store/tickets', [TicketController::class, 'store'])->name('tickets.store');
-    Route::post('/delete/tickets/{id}', [TicketController::class, 'delete'])->name('tickets.destroy');
+    Route::post('/delete/tickets/{id}', [TicketController::class, 'delete'])->name('tickets.delete');
 });
